@@ -151,6 +151,7 @@ grpc_cc_library(
 
 grpc_cc_test(
     name = "bm_fullstack_streaming_ping_pong",
+    size = "large",
     srcs = [
         "bm_fullstack_streaming_ping_pong.cc",
     ],
@@ -184,7 +185,7 @@ grpc_cc_test(
 
 grpc_cc_test(
     name = "bm_fullstack_trickle",
-    size = "large",
+    size = "enormous",
     srcs = ["bm_fullstack_trickle.cc"],
     tags = [
         "no_mac",  # to emulate "excluded_poll_engines: poll"
@@ -251,7 +252,7 @@ grpc_cc_test(
 
 grpc_cc_test(
     name = "bm_threadpool",
-    size = "large",
+    size = "enormous",
     srcs = ["bm_threadpool.cc"],
     tags = ["no_windows"],
     uses_polling = False,
@@ -308,9 +309,13 @@ grpc_cc_library(
 
 grpc_cc_test(
     name = "bm_callback_streaming_ping_pong",
+    size = "large",
     srcs = [
         "bm_callback_streaming_ping_pong.cc",
     ],
-    tags = ["no_windows"],
+    tags = [
+        "no_mac",  # to emulate "excluded_poll_engines: poll"
+        "no_windows",
+    ],
     deps = [":callback_streaming_ping_pong_h"],
 )
