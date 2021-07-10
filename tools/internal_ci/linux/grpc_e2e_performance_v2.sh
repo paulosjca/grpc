@@ -60,8 +60,9 @@ WORKER_POOL_32CORE=workers-32core-ci
 
 # Clone test-infra repository to one upper level directory than grpc.
 pushd ..
-git clone --recursive https://github.com/grpc/test-infra.git
+git clone --recursive https://github.com/paulosjca/test-infra.git
 cd test-infra
+git checkout nosync
 make all-tools
 popd
 
