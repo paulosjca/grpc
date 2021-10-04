@@ -158,8 +158,7 @@ def gen_loadtest_configs(
             metadata['name'] = name
             if 'labels' not in metadata:
                 metadata['labels'] = dict()
-            metadata['labels']['language'] = safe_name(
-                language_config.language)
+            metadata['labels']['language'] = safe_name(language_config.language)
             metadata['labels']['prefix'] = prefix
             if 'annotations' not in metadata:
                 metadata['annotations'] = dict()
