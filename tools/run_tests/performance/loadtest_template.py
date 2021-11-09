@@ -29,9 +29,8 @@ import argparse
 import sys
 from typing import Any, Dict, Iterable, List, Mapping, Type
 
-import yaml
-
 import loadtest_config
+import yaml
 
 TEMPLATE_FILE_HEADER_COMMENT = """
 # Template generated from load test configurations by loadtest_template.py.

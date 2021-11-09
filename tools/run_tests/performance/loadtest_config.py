@@ -32,10 +32,9 @@ import string
 import sys
 from typing import Any, Dict, Iterable, Mapping, Optional, Type
 
-import yaml
-
 import scenario_config
 import scenario_config_exporter
+import yaml
 
 CONFIGURATION_FILE_HEADER_COMMENT = """
 # Load test configurations generated from a template by loadtest_config.py.
