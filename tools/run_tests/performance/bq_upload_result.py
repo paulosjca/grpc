@@ -16,7 +16,6 @@
 # Uploads performance benchmark result file to bigquery.
 
 from __future__ import print_function
-import big_query_utils
 
 import argparse
 import calendar
@@ -25,6 +24,8 @@ import os
 import sys
 import time
 import uuid
+
+import big_query_utils
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
@@ -267,8 +268,7 @@ def _populate_prometheus_query_results_from_file(scenario_result,
                             'cpuSeconds': container_data['cpuSeconds'],
                             'memoryMean': container_data['memoryMean'],
                         }
-                        containersPrometheusData.append(
-                            containerPrometheusData)
+                        containersPrometheusData.append(containerPrometheusData)
                     clientPrometheusData[
                         'containers'] = containersPrometheusData
                     clientsPrometheusData.append(clientPrometheusData)
@@ -286,8 +286,7 @@ def _populate_prometheus_query_results_from_file(scenario_result,
                             'cpuSeconds': container_data['cpuSeconds'],
                             'memoryMean': container_data['memoryMean'],
                         }
-                        containersPrometheusData.append(
-                            containerPrometheusData)
+                        containersPrometheusData.append(containerPrometheusData)
                     serverPrometheusData[
                         'containers'] = containersPrometheusData
                     serversPrometheusData.append(serverPrometheusData)
