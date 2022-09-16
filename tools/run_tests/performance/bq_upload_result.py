@@ -16,6 +16,7 @@
 # Uploads performance benchmark result file to bigquery.
 
 from __future__ import print_function
+import big_query_utils
 
 import argparse
 import calendar
@@ -26,12 +27,10 @@ import time
 import uuid
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-import massage_qps_stats
 
 gcp_utils_dir = os.path.abspath(
     os.path.join(os.path.dirname(__file__), '../../gcp/utils'))
 sys.path.append(gcp_utils_dir)
-import big_query_utils
 
 _PROJECT_ID = 'grpc-testing'
 
@@ -268,7 +267,8 @@ def _populate_prometheus_query_results_from_file(scenario_result,
                             'cpuSeconds': container_data['cpuSeconds'],
                             'memoryMean': container_data['memoryMean'],
                         }
-                        containersPrometheusData.append(containerPrometheusData)
+                        containersPrometheusData.append(
+                            containerPrometheusData)
                     clientPrometheusData[
                         'containers'] = containersPrometheusData
                     clientsPrometheusData.append(clientPrometheusData)
@@ -286,7 +286,8 @@ def _populate_prometheus_query_results_from_file(scenario_result,
                             'cpuSeconds': container_data['cpuSeconds'],
                             'memoryMean': container_data['memoryMean'],
                         }
-                        containersPrometheusData.append(containerPrometheusData)
+                        containersPrometheusData.append(
+                            containerPrometheusData)
                     serverPrometheusData[
                         'containers'] = containersPrometheusData
                     serversPrometheusData.append(serverPrometheusData)
